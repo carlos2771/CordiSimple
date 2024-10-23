@@ -15,12 +15,12 @@ class RoleSeeder extends Seeder
         // Definir los roles
         $roles = [
             [
-                'name' => 'usuario',
-                'description' => 'Rol de usuario regular'
+                'name' => 'user',
+                'description' => 'regular user role'
             ],
             [
                 'name' => 'admin',
-                'description' => 'Rol de administrador'
+                'description' => 'administrator role'
             ]
         ];
 
