@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Reserve extends Model
 {
     /*
     |--------------------------------------------------------------------------
@@ -12,13 +12,14 @@ class Status extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'statuses';
+    protected $table = 'reserves';
     protected $primaryKey = 'id';
     public $timestamps = true;
     // protected $guarded = [];
     protected $fillable = [
-        'name',
-        'description',
+        'event_id',
+        'user_id',
+        'status_id',
         // Otros campos...
     ];
 
@@ -38,9 +39,21 @@ class Status extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function reserve()
+    //Se comentara hasta q se cree el modelo event
+
+    // public function event()
+    // {
+    //     return $this->belongsTo(Event::class);
+    // }
+
+    public function user()
     {
-        return $this->belongsTo(Reserve::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
 
     /*
