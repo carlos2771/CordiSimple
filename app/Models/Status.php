@@ -12,9 +12,9 @@ class Status extends Model
     |--------------------------------------------------------------------------
     */
 
-    // protected $table = 'categories';
-    // protected $primaryKey = 'id';
-    // public $timestamps = false;
+    protected $table = 'statuses';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
     // protected $guarded = [];
     protected $fillable = [
         'name',
