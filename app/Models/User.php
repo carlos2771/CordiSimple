@@ -45,4 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //Relationship to reserve table
+    public function reserve()
+    {
+        return $this->belongsTo(Reserve::class);
+    }
 }
