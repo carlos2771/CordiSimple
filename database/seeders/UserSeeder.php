@@ -56,6 +56,10 @@ class UserSeeder extends Seeder
                     'updated_at' => now(),
                 ]
             );
+
+
+        foreach ($users as $user) {
+            User::create($user);
         }
     }
 }
