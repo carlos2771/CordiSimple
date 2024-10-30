@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models;
+use App\Models\Event;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
@@ -14,7 +14,7 @@ class EventSeeder extends Seeder
      */
     public function run(): void
     {
-        $Event=[
+        $event=[
             [
                 'name' => 'Conferencia de Tecnología',
                 'description' => 'Evento anual sobre los últimos avances en tecnología.',
@@ -46,5 +46,20 @@ class EventSeeder extends Seeder
                 'updated_at' => now(),
             ]
         ];
+
+        foreach ($event as $eventData) {
+            Event::firstOrCreate(
+                ['name' => $eventData['name']],
+                [
+                    'description' => $eventData['description'],
+                    'date_time' => $eventData['date_time'],
+                    'location' => $eventData['location'],
+                    'people_capacity' => $eventData['people_capacity'],
+                    'status_id' => $eventData['status_id'],
+                    'created_at' => $eventData['created_at'],
+                    'updated_at' => $eventData['updated_at'],
+                ]
+            );
+        }
     }
 }
