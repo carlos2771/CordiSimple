@@ -13,8 +13,8 @@ class StatusSeeder extends Seeder
     public function run(): void
     {
         $statuses = [
-            ['name' => 'active', 'description' => 'currently active'],
-            ['name' => 'cancelled', 'description' => 'currently cancelled'],
+            ['name' => 'activado', 'description' => 'actualmente activo'],
+            ['name' => 'cancelado', 'description' => 'actualmente cancelado'],
         ];
 
         foreach ($statuses as $state) {
